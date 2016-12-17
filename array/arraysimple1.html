@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+
+
+<script>
+
+    var array = ["a", "x", "b", "d", "m", "a", "k", "m", "p", "j", "a"];
+    var arrayMap = {};
+
+    var getIndexArr = function(el,arr){
+        var res = [];
+        function recuseA (el,arr,start){
+            var index = arr.indexOf(el,start||0);
+            if(index!=-1){
+                res.push(index);
+                recuseA(el,arr,++index);
+            }
+        }
+        recuseA(el,arr);
+        return res;
+    };
+    var max = 0;
+    var key = '';
+    for(var i=0;i<array.length;i++){
+        var el = array[i];
+        var indexs = getIndexArr(el,array);
+        arrayMap[el] = indexs;
+        if(indexs.length>max){
+            max = indexs.length;
+            key = el;
+        }
+    }
+
+    console.log('maxReatElement:'+key+',indexs:'+arrayMap[key].join(','));
+
+
+
+</script>
+</body>
+</html>

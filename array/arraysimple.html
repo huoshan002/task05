@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+
+
+<script>
+
+    var array = ["a", "x", "b", "d", "m", "a", "k", "m", "p", "j", "a"];
+    var arrayMap = {};
+
+    for(var i=0;i<array.length;i++){
+        var el = array[i];
+        if(arrayMap[el]){
+            arrayMap[el].push(i)
+        }else{
+            arrayMap[el]=[];
+            arrayMap[el].push(i)
+        }
+    }
+    var max = 0;
+    var key = '';
+    for(var el in arrayMap){
+        var cur = arrayMap[el].length
+        if(cur>max){
+            max = cur;
+            key = el;
+        }
+    }
+
+    console.log('maxNum:'+key+',index:'+arrayMap[key].join(','))
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+
+
+<script>
+
+    var array1 = ["a", "x", "b", "d", "m", "a", "k", "m", "p", "j", "a"];
+    var sortArray = array1.sort();
+    var res = [];
+    var maxKeyIndex = [];
+
+    //循环数组中最多的字母
+    for (var i = 0; i < sortArray.length;) {
+        var count = 0;
+        for (var j = i; j < sortArray.length; j++) {
+            if (sortArray[i] == sortArray[j]) {
+                count++
+            }
+        }
+
+        res.push(sortArray[i], count);
+
+        i += count;
+    }
+    document.write("计算最多字母：" + res + "<br/>");
+    console.log(res);
+
+
+    //获取字母所在位置
+    var array2 = ["a", "x", "b", "d", "m", "a", "k", "m", "p", "j", "a"];
+    function getIndexArray(key, arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == key) {
+                maxKeyIndex.push(i);
+            }
+        }
+    }
+
+    getIndexArray('a', array2);
+    document.write("字母所在位置：" + maxKeyIndex);
+    console.log(maxKeyIndex);
+
+
+</script>
+</body>
+</html>

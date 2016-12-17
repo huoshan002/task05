@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+
+
+<script>
+    var array = ["a", "x", "b", "d", "m", "a", "k", "m", "p", "j", "a"];
+    var res = {};
+    var flag = {maxStr:"",maxCount:0};
+    for (var i = 0; i < array.length;i++) {
+        var count = res[array[i]];
+        if(count){
+            res[array[i]] = ++count;
+            if(flag['maxCount'] < count){
+                flag['maxCount'] = count;
+                flag['maxStr'] = array[i];
+            }
+        }else{
+            res[array[i]] = 1;
+        }
+    }
+    var getIndexArray = function (str,arr) {
+        var indexArray = [];
+        for (var i = 0; i < arr.length;i++) {
+            if(str == arr[i]){
+                indexArray.push(i);
+            }
+        }
+        return indexArray;
+    };
+    if(flag['maxStr']){
+        console.log("出现最多的字符串是：" + flag['maxStr'] + ",最多出现:" + flag['maxCount'] + ",对应的下标为:" + getIndexArray(flag['maxStr'],array).join(","));
+    }
+     /*
+    var array = ["a", "x", "b", "d", "m", "a", "k", "m", "p", "j", "a"];
+    var res = [];
+    var local = [];
+
+
+
+    for (var i = 0; i < array.length;) {
+        var count = 0;
+
+        for (var j = i; j < array.length; j++) {
+            if (array[i] == array[j]) {
+                count++;
+            }
+        }
+
+        res.push([array[i], count]);
+        i += count;
+
+    }
+
+    console.log(res);
+
+    for (var i = 0; i < res.length; i++) {
+        document.writeln("值:" + res[i][0] + "重复次数:" + res[i][1] + "<br/>");
+    }
+
+    for (var k = 0; k < array.length; k++) {
+
+        var local = array.indexOf('a', k);
+        k += local;
+
+        console.log(res);
+
+    }
+
+    */
+    /*var ary = ["aaa", "露露", "bbb", "aaa", "ccc", "ccc", "aaa", "露露", "haha"];
+     var res = [];
+     ary.sort();
+
+
+     for (var i = 0; i < ary.length;) {
+     var count = 0;
+     for (var j = i; j < ary.length; j++) {
+
+     if (ary[i] == ary[j]) {
+     count++;
+     }
+
+     }
+     res.push([ary[i], count]);
+     i += count;
+
+     }
+
+     //res 二维数维中保存了 值和值的重复数
+     for (var i = 0; i < res.length; i++) {
+     document.writeln("值:" + res[i][0] + "            重复次数:" + res[i][1] + "<br/>");
+     }*/
+</script>
+</body>
+</html>
