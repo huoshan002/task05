@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+
+</head>
+<body>
+
+<div class="wrapper">
+
+
+    <div class="header">
+        <span class="title"><i class="demoImg"></i>计算器</span>
+        <span class="operator" id="operator"></span>
+        <span class="result" id="display">0</span>
+    </div>
+
+    <div class="middle-wrap">
+
+        <div class="btn-box">
+            <input type="button" value="7" onclick="calculator.num(this.value)">
+            <input type="button" value="8" onclick="calculator.num(this.value)">
+            <input type="button" value="9" onclick="calculator.num(this.value)">
+            <input type="button" value="4" onclick="calculator.num(this.value)">
+            <input type="button" value="5" onclick="calculator.num(this.value)">
+            <input type="button" value="6" onclick="calculator.num(this.value)">
+            <input type="button" value="1" onclick="calculator.num(this.value)">
+            <input type="button" value="2" onclick="calculator.num(this.value)">
+            <input type="button" value="3" onclick="calculator.num(this.value)">
+            <input type="button" value="0" onclick="calculator.num(this.value)">
+            <input type="button" value="C" onclick="calculator.clean()">
+        </div>
+
+        <div class="operation-box">
+            <input type="button" value="+" onclick="calculator.ope(this.value)">
+            <input type="button" value="-" onclick="calculator.ope(this.value)">
+            <input type="button" value="*" onclick="calculator.ope(this.value)">
+            <input type="button" value="/" onclick="calculator.ope(this.value)">
+        </div>
+
+    </div>
+
+
+    <div class="equal-box">
+        <input type="button" value="=" class="equal-button" id="calculation" onclick="calculator.compute()"/>
+    </div>
+
+
+
+</div>
+
+
+
+<script src="scripts/main2.js"></script>
+</body>
+</html>
